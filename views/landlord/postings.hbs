@@ -1,0 +1,38 @@
+<div class="m-auto text-center p-3">
+    {{!-- <div class="bg-white opacity-75 w-50 m-auto p-3"> --}}
+        <h1 class="text-uppercase fw-bold">{{title}}</h1>
+    {{!-- </div> --}}
+</div>
+
+<div class=" m-auto w-50 ">
+    <form method="post">
+        <div class="mb-3">
+            <label for="images" class="form-label">House Images</label>
+            <input class="form-control" type="file" name="images" id="images" multiple>
+        </div>
+        <div class="mb-3">
+            <label for="headline" class="form-label">Post Headline</label>
+            <input name="headline" id="headline" class="form-control" placeholder="Post Headline" required />
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" id="description" class="form-control" placeholder="Description"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input name="price" id="price" class="form-control" placeholder="Price" required />
+        </div>
+        <div class="mb-3">
+            <label for="verification" class="form-label">Utility Bill</label>
+            <input class="form-control" type="file" name="verification" id="verification">
+            <div id="postVerification" class="form-text text-danger text-uppercase">
+                * Upload utility bill for post verification
+            </div>
+        </div>
+
+        <div class="md-3 m-auto text-center">
+            <button type="submit" class="btn btn-danger mb-3">Submit</button>
+        </div>
+    
+    </form>
+</div>

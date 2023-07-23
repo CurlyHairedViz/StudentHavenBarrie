@@ -1,0 +1,33 @@
+<div id="auth"></div>
+    <h1>Register</h1>
+
+    <form method="post">
+        <fieldset class="form-group m-3">
+            <label for="username" class="col-1 text-start control-label">Email: *</label>
+            <input name="username" id="username" required type="email" placeholder="email@email.com" />
+        </fieldset>
+        <fieldset class="form-group m-3">
+            <label for="password" class="col-1 text-start control-label">Password: *</label>
+            <input name="password" id="password" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+            {{!-- <img src="/images/show.png" alt="Show/Hide" id="imgShowHide" onclick="showHide()" /> --}}
+        </fieldset>
+        <fieldset class="form-group m-3">
+            <label for="confirm" class="col-1 text-start control-label">Confirm: *</label>
+            <input name="confirm" id="confirm" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+            <span id="pwMsg"></span>
+        </fieldset>
+        <fieldset class="form-group m-3">
+            <label for="userType" class="col-1 text-start control-label">User Type: *</label>
+            <select name="userType" id="userType" required>
+                <option value="">Select User</option>
+                <option value="Student">Student</option>
+                <option value="Landlord">Landlord</option>
+            </select>
+        </fieldset>
+        <fieldset class="form-group m-3">
+            <button class="btn btn-dark">Register</button>
+            <hr />
+            Already have an account? <a href="/auth/login" title="Login">Login</a>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+<div id="auth">
+    <h1>Login</h1>
+
+    <form method="post">
+        <fieldset class="form-group m-3">
+            <label for="username" class="col-1 control-label text-start">Email: *</label>
+            <input name="username" id="username" type="email" required />
+        </fieldset>
+        <fieldset class="form-group m-3">
+            <label for="password" class="col-1 text-start control-label">Password: *</label>
+            <input name="password" id="password" type="password" required />
+        </fieldset>
+        <fieldset class="form-group mt-3">
+            <button class="btn btn-dark">Login</button>
+            <hr>
+            Don't have an account? <a href="/auth/register" title="Register">Register</a>
+        </fieldset>
+    </form>
+</div>
