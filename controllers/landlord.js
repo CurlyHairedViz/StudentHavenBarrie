@@ -9,7 +9,7 @@ const Post = require('../models/posting');
 router.get('/index', global.isAuthenticated, async (req, res) => {
     const posts = await Post.find({userId: req.user.username});
     res.render('landlord/index', {
-        title: 'Landlord Dashboard',
+        title: 'Your Listings',
         posts,
         user: req.user
     });

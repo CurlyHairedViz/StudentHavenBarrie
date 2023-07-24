@@ -50,7 +50,7 @@ router.get('/setRoles', (req,res) => {
     if(req.session.userType == 'Student')
     {
         console.log("This is a Student");
-        res.redirect('/housing/listing');
+        res.redirect('/student/index');
     }
     else if(req.session.userType == 'Landlord')
     {

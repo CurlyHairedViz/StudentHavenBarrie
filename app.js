@@ -10,6 +10,7 @@ const usersRouter = require('./controllers/users');
 // custom controllers
 const auth = require('./controllers/auth'); 
 const landlord = require('./controllers/landlord');
+const student = require('./controllers/student');
 
 const app = express();
 
@@ -67,6 +68,7 @@ app.use('/users', usersRouter);
 //mapping the requests for custom controllers
 app.use('/auth', auth);
 app.use('/landlord', landlord);
+app.use('/student', student);
 
 
 // Code help from https://stackoverflow.com/questions/34252817/handlebarsjs-check-if-a-string-is-equal-to-a-value
