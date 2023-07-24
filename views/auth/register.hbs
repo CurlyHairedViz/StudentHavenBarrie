@@ -1,33 +1,33 @@
-<div id="auth"></div>
-    <h1>Register</h1>
+<div id="auth">
+    <p class="display-4 text-uppercase text-center fw-bold mb-4">Register</p>
 
-    <form method="post">
-        <fieldset class="form-group m-3">
-            <label for="username" class="col-1 text-start control-label">Email: *</label>
-            <input name="username" id="username" required type="email" placeholder="email@email.com" />
-        </fieldset>
-        <fieldset class="form-group m-3">
-            <label for="password" class="col-1 text-start control-label">Password: *</label>
-            <input name="password" id="password" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+    <form method="post" class="w-50 m-auto">
+        <div class="mb-3">
+            <label for="username" class="form-label">Email</label>
+            <input name="username" id="username" type="email" class="form-control" placeholder="email@email.com" required />
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input name="password" id="password" class="form-control" type="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
             {{!-- <img src="/images/show.png" alt="Show/Hide" id="imgShowHide" onclick="showHide()" /> --}}
-        </fieldset>
-        <fieldset class="form-group m-3">
-            <label for="confirm" class="col-1 text-start control-label">Confirm: *</label>
-            <input name="confirm" id="confirm" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+        </div>
+        <div class="mb-3">
+            <label for="confirm" class="form-label">Confirm Password</label>
+            <input name="confirm" id="confirm" type="password" class="form-control" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
             <span id="pwMsg"></span>
-        </fieldset>
-        <fieldset class="form-group m-3">
-            <label for="userType" class="col-1 text-start control-label">User Type: *</label>
-            <select name="userType" id="userType" required>
+        </div>
+        <div class="mb-3">
+            <label for="userType" class="form-label">User Type</label>
+            <select name="userType" id="userType" class="form-control" required>
                 <option value="">Select User</option>
                 <option value="Student">Student</option>
                 <option value="Landlord">Landlord</option>
             </select>
-        </fieldset>
-        <fieldset class="form-group m-3">
-            <button class="btn btn-dark">Register</button>
+        </div>
+        <div class="m-auto text-center">
+            <button class="btn btn-danger text-uppercase w-25 fw-bold m-3">Register</button>
             <hr />
             Already have an account? <a href="/auth/login" title="Login">Login</a>
-        </fieldset>
+        </div>
     </form>
 </div>

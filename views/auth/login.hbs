@@ -1,19 +1,20 @@
-<div id="auth">
-    <h1>Login</h1>
+<div id="auth" class="m-auto mt-5">
+    <p class="display-4 text-uppercase text-center fw-bold mb-4">Login</p>
 
-    <form method="post">
-        <fieldset class="form-group m-3">
-            <label for="username" class="col-1 control-label text-start">Email: *</label>
-            <input name="username" id="username" type="email" required />
-        </fieldset>
-        <fieldset class="form-group m-3">
-            <label for="password" class="col-1 text-start control-label">Password: *</label>
-            <input name="password" id="password" type="password" required />
-        </fieldset>
-        <fieldset class="form-group mt-3">
-            <button class="btn btn-dark">Login</button>
+
+    <form method="post" class="w-25 m-auto">
+        <div class="mb-3">
+            <label for="username" class="form-label">Email</label>
+            <input class="form-control" name="username" id="username" placeholder="email@xyz.com" type="email" required />
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input class="form-control" name="password" id="password" placeholder="Password" type="password" required />
+        </div>
+        <div class="m-auto text-center">
+            <button class="btn w-25 btn-danger fw-bold m-3">Login</button>
             <hr>
             Don't have an account? <a href="/auth/register" title="Register">Register</a>
-        </fieldset>
+        </div>
     </form>
 </div>
