@@ -16,6 +16,20 @@ const postingSchema = new mongoose.Schema({
     userId: {
         type: String,
         required: 'This is Required'
+    },
+    houseImages: {
+        type: Array
+    },
+    verification: {
+        type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    },
+    isVerified: {
+        type: Boolean,
+        default: false
     }
 });
 
