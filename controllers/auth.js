@@ -55,7 +55,7 @@ router.get('/setRoles', (req,res) => {
     else if(req.session.userType == 'Landlord')
     {
         console.log("This is a Landlord");
-        res.redirect('/landlord/postings');
+        res.redirect('/landlord/index');
     }
     else if(req.session.userType == 'Admin')
     {

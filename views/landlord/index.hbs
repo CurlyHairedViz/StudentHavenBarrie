@@ -1,0 +1,13 @@
+<h1>Your Listings</h1>
+
+{{#each posts}}
+<div class="card" style="width: 18rem;">
+  <img src="" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ this.subject }}</h5>
+    <p class="card-text">{{ this.description }}</p>
+    <p class="card-text">{{ this.price }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+{{/each}}
