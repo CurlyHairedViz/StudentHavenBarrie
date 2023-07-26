@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
 const global = require('../controllers/globalFunction');
 const houseImages = require('./houseImages');
@@ -24,7 +25,7 @@ router.get('/postings', global.isAuthenticated, (req, res) => {
     });
 })
 
-router.post('/postings', global.isAuthenticated, houseImages.array('houseImages',4), async (req, res) => {
+router.post('/postings', global.isAuthenticated, houseImages.array('houseImages', 5), async (req, res) => {
     // console.log(req.files[1].originalname);
 
     const post = new Post({
@@ -60,6 +61,26 @@ router.post('/verification/:_id', global.isAuthenticated, verification.single('v
 
         await post.save();
         console.log('Verification added');
+        res.redirect('/landlord/index');
+    } catch(err){
+        res.send(400);
+    }
+});
+
+router.get('/delete/:_id', global.isAuthenticated, async (req, res) => {
+    try{
+        // find the post and delete the images
+        const post = await Post.findOne({_id: req.params._id});
+
+        for(let i = 0; i < post.houseImages.length; i++){
+            fs.unlinkSync('./public/houseImages/' + post.houseImages[i]);
+        }
+
+        // delete verification image
+        fs.unlinkSync('./public/verification/' + post.verification);
+
+        await Post.deleteOne({_id: req.params._id});;
+        console.log('Posting deleted');
         res.redirect('/landlord/index');
     } catch(err){
         res.send(400);

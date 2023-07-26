@@ -31,6 +31,20 @@ body {
   padding-top: 35vh;
 }
 
+#scam {
+  background-image: url('../images/caution.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  height: 50em;
+  padding-top: 35vh;
+}
+
+#scam h1 , #scam p{
+  text-shadow: 2px 2px 4px #000000;
+}
+
 #navbar {
   background-color: #002b47;
   position: fixed;

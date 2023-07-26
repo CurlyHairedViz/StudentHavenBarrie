@@ -23,4 +23,11 @@ router.get('/contact', (req, res) => {
   });
 });
 
+router.get('/scams', (req, res) => {
+  res.render('scams', { 
+    title: 'Housing Scam',
+    user: req.user
+  });
+});
+
 module.exports = router;

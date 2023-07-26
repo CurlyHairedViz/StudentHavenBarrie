@@ -17,3 +17,7 @@ function scrollFunction () {
         document.getElementById('navbar').style.top = "-100px";
     }
 }
+
+function confirmDelete() {
+    return confirm("Are you sure you want to delete this posting?");
+}
