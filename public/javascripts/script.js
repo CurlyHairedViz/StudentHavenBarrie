@@ -21,3 +21,7 @@ function scrollFunction () {
 function confirmDelete() {
     return confirm("Are you sure you want to delete this posting?");
 }
+
+function confirmVerification() {
+    return confirm("Are you sure you want to verify this listing?");
+}

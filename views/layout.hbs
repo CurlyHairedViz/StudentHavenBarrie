@@ -37,6 +37,17 @@
 
           <ul class="navbar-nav ms-auto">
             
+            {{#ifEquals user.userType "Admin"}}
+              <ul class="navbar-nav bg-danger rounded-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/approved">Approved Listings</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/pending">Pending Listings</a>
+                </li>
+              </ul>
+            {{/ifEquals}}
+
             {{#ifEquals user.userType "Student"}}
               <ul class="navbar-nav bg-danger rounded-3">
                 <li class="nav-item">

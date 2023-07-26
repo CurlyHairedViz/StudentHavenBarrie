@@ -11,6 +11,7 @@ const usersRouter = require('./controllers/users');
 const auth = require('./controllers/auth'); 
 const landlord = require('./controllers/landlord');
 const student = require('./controllers/student');
+const admin = require('./controllers/admin');
 
 const app = express();
 
@@ -67,6 +68,7 @@ app.use('/users', usersRouter);
 
 //mapping the requests for custom controllers
 app.use('/auth', auth);
+app.use('/admin', admin);
 app.use('/landlord', landlord);
 app.use('/student', student);
 

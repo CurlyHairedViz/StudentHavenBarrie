@@ -60,7 +60,7 @@ router.get('/setRoles', (req,res) => {
     else if(req.session.userType == 'Admin')
     {
         console.log("This is an Admin");
-        res.redirect('/');
+        res.redirect('/admin/approved');
     }
 });
 

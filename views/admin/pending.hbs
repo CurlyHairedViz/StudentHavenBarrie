@@ -1,0 +1,36 @@
+<div class="m-auto text-center p-3">
+    {{!-- <div class="bg-white opacity-75 w-50 m-auto p-3"> --}}
+        <h1 class="text-uppercase fw-bold">{{ title }}</h1>
+    {{!-- </div> --}}
+</div>
+
+<div class="row g-4 w-75 m-auto justify-content-start">
+    {{#each posts}}
+        {{#ifEquals this.isVerified false}}
+        <div class="col-md-4">
+            <div class="card h-100" style="width: 18rem;">
+                <div class="d-flex">
+                <form action="/admin/verify/{{this._id}}" method="POST" class="w-50">
+                    <button type="submit" onclick="return confirmVerification();" class="btn btn-danger fw-bold text-uppercase w-100 rounded-0">Verify</button>
+                </form>         
+                <form action="/admin/reject/{{this._id}}" method="POST" class="w-50">
+                    <button type="submit" onclick="return confirmDelete();" class="btn btn-dark fw-bold text-uppercase w-100 rounded-0">Reject</button>
+                </form>
+                </div>      
+                
+                <div class="card-body">
+                    <h5 class="card-title">{{ this.subject }}</h5>
+                    <p class="card-text">{{ this.description }}</p>
+                    <p class="card-text">Price: {{ this.price }}</p>
+                    <p class="card-text">Verification:-</p>
+                    <img src="/verification/{{ this.verification }}" class="w-100 p-0 m-0" alt="...">
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        {{/ifEquals}}
+    {{/each}}
+    
+</div>
