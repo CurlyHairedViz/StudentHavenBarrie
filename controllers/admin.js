@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
 const global = require('../controllers/globalFunction');
 
@@ -41,6 +42,15 @@ router.post('/verify/:_id', global.isAuthenticated, async (req, res) => {
 router.post('/reject/:_id', global.isAuthenticated, async (req, res) => {
     try{
         const post = await Post.findOne({_id: req.params._id});
+        
+        // delete house images
+        for(let i = 0; i < post.houseImages.length; i++){
+            fs.unlinkSync('./public/houseImages/' + post.houseImages[i]);
+        }
+
+        // delete verification image
+        fs.unlinkSync('./public/verification/' + post.verification);
+        
         await post.deleteOne();
         console.log('Posting approved');
         res.redirect('/admin/approved');

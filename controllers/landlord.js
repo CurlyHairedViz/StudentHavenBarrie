@@ -20,13 +20,12 @@ router.get('/index', global.isAuthenticated, async (req, res) => {
 
 router.get('/postings', global.isAuthenticated, (req, res) => {
     res.render('landlord/postings',{
-        title: 'Housing',
+        title: 'Add Listing',
         user: req.user
     });
 })
 
 router.post('/postings', global.isAuthenticated, houseImages.array('houseImages', 5), async (req, res) => {
-    // console.log(req.files[1].originalname);
 
     const post = new Post({
         subject: req.body.subject,
